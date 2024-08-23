@@ -33,8 +33,14 @@ if not FRONTEND_HOST:
 
 HOST_PORT = int(os.getenv("HOST_PORT") or 8000)
 
-logger = logging.getLogger("uvicorn")
-# logger.setLevel(logging.DEBUG)
 
-# Fixing a "bycript issue"
+#logger: Configura un logger llamado uvicorn que es utilizado para registrar eventos en la aplicación. 
+#Por ahora, está configurado a un nivel de registro básico (no se activa DEBUG).
+logger = logging.getLogger("uvicorn")
+
+
+
+# logger.setLevel(logging.DEBUG)
+#  Fixing a "bycript issue" //  Este comentario es una referencia a un problema conocido con bcrypt, una librería para encriptar contraseñas.
+#Configura el logger de passlib (una librería de gestión de contraseñas que utiliza bcrypt) para que solo registre errores, evitando llenar los logs con información innecesaria.
 logging.getLogger("passlib").setLevel(logging.ERROR)

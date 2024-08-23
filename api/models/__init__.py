@@ -1,3 +1,2 @@
-from .orders import *
-from .products import *
+from .property import *
 from .users import *
